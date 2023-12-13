@@ -35,6 +35,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+
+extern char **LINEV;
+
+
 void read_monty(char *filename);
 char **arg_vector(char *line);
 void clean_args(char **linev);

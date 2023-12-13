@@ -1,5 +1,4 @@
 #include "monty.h"
-extern char **LINEV;
 
 /**
  * push - push into stack
