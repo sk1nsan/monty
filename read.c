@@ -104,7 +104,8 @@ int get_opcode(char *opcode, unsigned int line_number, stack_t **stack)
 */
 void check_command(char **LINEV, unsigned int line_number, stack_t **stack)
 {
-
+	if (LINEV[0] && LINEV[0][0] == '#')
+		return;
 	if (LINEV[0] && !get_opcode(LINEV[0], line_number, stack))
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, LINEV[0]);
