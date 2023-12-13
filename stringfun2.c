@@ -100,7 +100,7 @@ int _isnumber(char *s)
 
 	for (i = 0; s[i]; i++)
 	{
-		if (!_isdigit(s[i]))
+		if (!_isdigit(s[i]) && s[i] != '-')
 			return (0);
 	}
 	return (1);
