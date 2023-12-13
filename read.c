@@ -1,6 +1,5 @@
 #define _POSIX_C_SOURCE 200809L
 #include "monty.h"
-#include <stdio.h>
 
 char **LINEV;
 
@@ -74,6 +73,7 @@ int get_opcode(char *opcode, unsigned int line_number, stack_t **stack)
 	instruction_t instruction_arr[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	int i;
