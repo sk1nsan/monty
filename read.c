@@ -75,6 +75,7 @@ int get_opcode(char *opcode, unsigned int line_number, stack_t **stack)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;
