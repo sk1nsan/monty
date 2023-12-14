@@ -27,10 +27,13 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	if (stack == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		fprintf(stderr, "Error: not valid stack\n");
 		exit(EXIT_FAILURE);
 	}
 	new->next = *stack;
+	new->prev = NULL;
+	if (*stack)
+		(*stack)->prev = new;
 	new->n = _atoi(LINEV[1]);
 	*stack = new;
 }

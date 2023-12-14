@@ -75,6 +75,37 @@ void rotl(stack_t **stack, unsigned int line_number)
 		curr = curr->next;
 	}
 	curr->next = *stack;
+	(*stack)->prev = curr;
 	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 	(curr->next)->next = NULL;
+}
+
+/**
+ * rotr - rotates the stack to the top.
+ *
+ * @stack: stack
+ * @line_number: line number
+ *
+ * Return: void
+*/
+
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *curr = *stack;
+
+	(void) line_number;
+	if (stack == NULL || *stack == NULL)
+		return;
+	while (curr)
+	{
+		if (curr->next == NULL)
+			break;
+		curr = curr->next;
+	}
+	(curr->prev)->next = NULL;
+	curr->next = *stack;
+	curr->prev = NULL;
+	(*stack)->prev = curr;
+	*stack = curr;
 }
