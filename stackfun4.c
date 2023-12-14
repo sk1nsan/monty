@@ -97,6 +97,8 @@ void rotr(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 	if (stack == NULL || *stack == NULL)
 		return;
+	if (curr->next == NULL)
+		return;
 	while (curr)
 	{
 		if (curr->next == NULL)
