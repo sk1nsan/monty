@@ -84,6 +84,7 @@ int get_opcode(char *opcode, unsigned int line_number, stack_t **stack)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	int i;
